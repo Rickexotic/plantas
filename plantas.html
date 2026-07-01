@@ -159,7 +159,59 @@
         text-align: center;
         padding: 20px;
     }
+/* Banner promocional */
 
+.banner-evento {
+    padding: 40px 10%;
+    background: #eef7ee;
+}
+
+.banner-container {
+    position: relative;
+    overflow: hidden;
+    border-radius: 20px;
+    box-shadow: 0 5px 20px rgba(0,0,0,.15);
+}
+
+.banner-container img {
+    width: 100%;
+    display: block;
+    animation: zoomBanner 12s infinite alternate ease-in-out;
+}
+
+.banner-overlay {
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        rgba(255,255,255,0),
+        rgba(255,255,255,0.35),
+        rgba(255,255,255,0)
+    );
+    animation: brillo 4s infinite;
+}
+
+@keyframes zoomBanner {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(1.08);
+    }
+}
+
+@keyframes brillo {
+    0% {
+        left: -100%;
+    }
+    100% {
+        left: 150%;
+    }
+}
+   
     @media(max-width:768px){
         nav ul{
             flex-direction: column;
@@ -264,7 +316,19 @@
         </div>
     </div>
 </section>
+<section class="banner-evento">
 
+    <h2>Próximo Evento</h2>
+
+    <div class="banner-container">
+
+        bannerplantas.png
+
+        <div class="banner-overlay"></div>
+
+    </div>
+
+</section>
 <section id="fotos">
     <h2>Galería de Plantas</h2>
 
