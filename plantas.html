@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Plantas Chile - Cuidados y Consejos</title>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Aptos, Arial, sans-serif;
+    }
+
+    body {
+        background-color: #f5f9f4;
+        color: #333;
+        line-height: 1.6;
+    }
+
+    header {
+        background: #2e7d32;
+        color: white;
+        padding: 20px;
+        text-align: center;
+    }
+
+    nav {
+        background: #1b5e20;
+        padding: 15px;
+    }
+
+    nav ul {
+        display: flex;
+        justify-content: center;
+        list-style: none;
+        gap: 30px;
+    }
+
+    nav a {
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+    .hero {
+        background: url('https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?auto=format&fit=crop&w=1400&q=80');
+        background-size: cover;
+        background-position: center;
+        color: white;
+        text-align: center;
+        padding: 120px 20px;
+    }
+
+    .hero h1 {
+        font-size: 3rem;
+        margin-bottom: 20px;
+    }
+
+    section {
+        padding: 60px 10%;
+    }
+
+    h2 {
+        margin-bottom: 25px;
+        color: #2e7d32;
+        text-align: center;
+    }
+
+    .filtros {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    .filtros button {
+        padding: 10px 20px;
+        margin: 5px;
+        border: none;
+        background: #2e7d32;
+        color: white;
+        cursor: pointer;
+        border-radius: 5px;
+    }
+
+    .plantas {
+        display: grid;
+        grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+        gap: 20px;
+    }
+
+    .card {
+        background: white;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 3px 10px rgba(0,0,0,.15);
+    }
+
+    .card img {
+        width: 100%;
+        height: 220px;
+        object-fit: cover;
+    }
+
+    .card-content {
+        padding: 15px;
+    }
+
+    .cuidados {
+        display: grid;
+        grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+        gap: 20px;
+    }
+
+    .tip {
+        background: white;
+        padding: 20px;
+        border-left: 5px solid #2e7d32;
+        border-radius: 8px;
+    }
+
+    .galeria {
+        display: grid;
+        grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+        gap: 15px;
+    }
+
+    .galeria img {
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+        border-radius: 10px;
+    }
+
+    form {
+        max-width: 600px;
+        margin: auto;
+    }
+
+    input, textarea {
+        width: 100%;
+        padding: 12px;
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+    button.enviar {
+        background: #2e7d32;
+        color: white;
+        border: none;
+        padding: 12px 25px;
+        cursor: pointer;
+    }
+
+    footer {
+        background: #1b5e20;
+        color: white;
+        text-align: center;
+        padding: 20px;
+    }
+
+    @media(max-width:768px){
+        nav ul{
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .hero h1{
+            font-size: 2rem;
+        }
+    }
+</style>
+</head>
+<body>
+
+<header>
+    <h1>🌿 Plantas Chile</h1>
+    <p>Guía de cuidados para plantas de interior y exterior</p>
+</header>
+
+<nav>
+    <ul>
+        <li><a href="#tipos">Tipos de Plantas</a></li>
+        <li><a href="#cuidados">Cuidados</a></li>
+        <li><a href="#fotos">Fotos</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+    </ul>
+</nav>
+
+<section class="hero">
+    <h1>Cultiva Naturaleza en tu Hogar</h1>
+    <p>Consejos adaptados al clima de Chile</p>
+</section>
+
+<section id="tipos">
+    <h2>Tipos de Plantas</h2>
+
+    <div class="filtros">
+        <button onclick="filtrar('all')">Todas</button>
+        <button onclick="filtrar('interior')">Interior</button>
+        <button onclick="filtrar('exterior')">Exterior</button>
+    </div>
+
+    <div class="plantas">
+
+        <div class="card interior">
+            <img src="https://images.unsplash.com/photo-1463936575829-25148e1db1b8?w=800" alt="">
+            <div class="card-content">
+                <h3>Monstera</h3>
+                <p>Ideal para interiores iluminados.</p>
+            </div>
+        </div>
+
+        <div class="card interior">
+            <img src="https://images.unsplash.com/photo-1485955900006-10f4d324d411?w=800" alt="">
+            <div class="card-content">
+                <h3>Sansevieria</h3>
+                <p>Muy resistente y de bajo mantenimiento.</p>
+            </div>
+        </div>
+
+        <div class="card exterior">
+            <img src="https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?w=800" alt="">
+            <div class="card-content">
+                <h3>Lavanda</h3>
+                <p>Perfecta para jardines y terrazas.</p>
+            </div>
+        </div>
+
+        <div class="card exterior">
+            <img src="https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07?w=800" alt="">
+            <div class="card-content">
+                <h3>Rosales</h3>
+                <p>Florecen gran parte del año.</p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<section id="cuidados">
+    <h2>Cuidados Básicos</h2>
+
+    <div class="cuidados">
+        <div class="tip">
+            <h3>💧 Riego</h3>
+            <p>Evita excesos. Revisa la humedad antes de regar.</p>
+        </div>
+
+        <div class="tip">
+            <h3>☀️ Luz</h3>
+            <p>Ubica cada planta según sus necesidades de iluminación.</p>
+        </div>
+
+        <div class="tip">
+            <h3>🌱 Fertilización</h3>
+            <p>Aplica nutrientes durante primavera y verano.</p>
+        </div>
+
+        <div class="tip">
+            <h3>✂️ Poda</h3>
+            <p>Elimina hojas secas para estimular el crecimiento.</p>
+        </div>
+    </div>
+</section>
+
+<section id="fotos">
+    <h2>Galería de Plantas</h2>
+
+    <div class="galeria">
+        <img src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?w=800">
+        <img src="https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?w=800">
+        <img src="https://images.unsplash.com/photo-1463936575829-25148e1db1b8?w=800">
+        <img src="https://images.unsplash.com/photo-1512428813834-c702c7702b78?w=800">
+    </div>
+</section>
+
+<section id="contacto">
+    <h2>Contáctanos</h2>
+
+    <form>
+        <input type="text" placeholder="Nombre" required>
+        <input type="email" placeholder="Correo electrónico" required>
+        <textarea rows="5" placeholder="Escribe tu consulta"></textarea>
+        <button class="enviar" type="submit">Enviar Consulta</button>
+    </form>
+</section>
+
+<footer>
+    <p>© 2026 Plantas Chile | Tu guía para el cuidado de plantas.</p>
+</footer>
+
+<script>
+function filtrar(tipo) {
+
+    let plantas = document.querySelectorAll('.card');
+
+    plantas.forEach(planta => {
+
+        if(tipo === 'all'){
+            planta.style.display = 'block';
+        }
+        else if(planta.classList.contains(tipo)){
+            planta.style.display = 'block';
+        }
+        else {
+            planta.style.display = 'none';
+        }
+
+    });
+}
+</script>
+
+</body>
+</html>
